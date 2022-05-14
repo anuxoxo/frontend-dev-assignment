@@ -17,13 +17,14 @@ export default function InputGroup({ name, type, label }) {
         }
     }
     const validatePwd = () => {
-        if (inputText !== confirmPwdText) {
-            setErrMsg("Password did not match")
-            setShowErr(true);
-        } else {
-            setErrMsg("");
-            setShowErr(false);
-        }
+        if (confirmPwdText.length > 0)
+            if (inputText !== confirmPwdText) {
+                setErrMsg("Password did not match")
+                setShowErr(true);
+            } else {
+                setErrMsg("");
+                setShowErr(false);
+            }
     }
     const validatePhone = () => {
         if (!(/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test(inputText))) {
@@ -47,19 +48,19 @@ export default function InputGroup({ name, type, label }) {
     return (
         <>
 
+            <label htmlFor={type}>{label}</label>
+            <input
+                type={type}
+                name={name}
+                id={name}
+                value={inputText}
+                onBlur={handleFocusOut}
+                onChange={(e) => {
+                    setInputText(e.target.value)
+                }} />
 
-            {name === "password" ?
+            {name === "password" &&
                 <>
-                    <label htmlFor={type}>{label}</label>
-                    <input
-                        type={type}
-                        name={name}
-                        id={name}
-                        value={inputText}
-                        onChange={(e) => {
-                            setInputText(e.target.value)
-                        }} />
-
                     <label htmlFor="confirmPassword">Confirm your password</label>
                     <input
                         type={"password"}
@@ -69,19 +70,6 @@ export default function InputGroup({ name, type, label }) {
                         onBlur={handleFocusOut}
                         onChange={(e) => {
                             setConfirmPwdText(e.target.value)
-                        }} />
-                </>
-                :
-                <>
-                    <label htmlFor={type}>{label}</label>
-                    <input
-                        type={type}
-                        name={name}
-                        id={name}
-                        value={inputText}
-                        onBlur={handleFocusOut}
-                        onChange={(e) => {
-                            setInputText(e.target.value)
                         }} />
                 </>
             }
