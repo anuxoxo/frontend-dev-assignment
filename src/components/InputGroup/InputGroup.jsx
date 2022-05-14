@@ -8,13 +8,14 @@ export default function InputGroup({ name, type, label }) {
     const [confirmPwdText, setConfirmPwdText] = useState("");
 
     const validateEmail = () => {
-        if (!(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputText))) {
-            setErrMsg("Please enter valid email address");
-            setShowErr(true);
-        } else {
-            setErrMsg("");
-            setShowErr(false);
-        }
+        if (inputText.length > 0)
+            if (!(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputText))) {
+                setErrMsg("Please enter valid email address");
+                setShowErr(true);
+            } else {
+                setErrMsg("");
+                setShowErr(false);
+            }
     }
     const validatePwd = () => {
         if (confirmPwdText.length > 0)
@@ -27,13 +28,14 @@ export default function InputGroup({ name, type, label }) {
             }
     }
     const validatePhone = () => {
-        if (!(/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test(inputText))) {
-            setErrMsg("Please enter valid phone number")
-            setShowErr(true);
-        } else {
-            setErrMsg("");
-            setShowErr(false);
-        }
+        if (inputText.length > 0)
+            if (!(/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test(inputText))) {
+                setErrMsg("Please enter valid phone number")
+                setShowErr(true);
+            } else {
+                setErrMsg("");
+                setShowErr(false);
+            }
     }
 
     const handleFocusOut = () => {
