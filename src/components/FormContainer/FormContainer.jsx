@@ -2,13 +2,15 @@ import React from 'react'
 import './FormContainer.scss'
 import InputGroup from "../InputGroup/InputGroup"
 
+import { Link } from "react-router-dom";
+
 export default function FormContainer() {
     return (
-        <div className="form_container">
-            <div className="form_heading">
+        <div className="form__container">
+            <div className="form__heading">
                 <h1>Create an account</h1>
             </div>
-            <form>
+            <div>
                 <InputGroup
                     type="email"
                     name="email"
@@ -32,11 +34,13 @@ export default function FormContainer() {
                 <input type="checkbox" name="agreeTerms" id="agreeTerms" defaultChecked />
                 <label htmlFor="agreeTerms">I read and agree Terms and Conditions</label>
 
-                <button className="create_account_btn">
-                    Create Account
-                </button>
+                <Link to="/graph" className="btn__link">
+                    <button className="createAccount__btn">
+                        Create Account
+                    </button>
+                </Link>
 
-            </form>
+            </div>
         </div >
     )
 }

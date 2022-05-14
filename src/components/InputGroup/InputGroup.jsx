@@ -78,7 +78,7 @@ export default function InputGroup({ name, type, label }) {
 
             {
                 showErr &&
-                <p className="error_msg">{errMsg}</p>
+                <p className="error__msg">{errMsg}</p>
             }
         </>
     )

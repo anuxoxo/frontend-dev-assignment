@@ -11,14 +11,8 @@ input {
   padding: 10px;
 }
 
-input[type="checkbox"] {
-  display: inline;
-  width: auto;
-  margin-right: 10px;
-}
-
 input[type="tel"] {
-  width: 40%;
+  width: 35%;
 }
 
 label[for="agreeTerms"] {
@@ -29,7 +23,7 @@ label[for="agreeTerms"] {
     size: 15px;
   }
 }
-.error_msg {
+.error__msg {
   color: red;
   font-weight: 400;
   margin: 0;

@@ -1,17 +1,29 @@
 import './App.scss';
-import BarChart from './components/BarChart';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import BarChart from './components/BarChart/BarChart';
 import BgContainer from './components/BgContainer/BgContainer'
 import FormContainer from './components/FormContainer/FormContainer'
 
 function App() {
   return (
-    <div className="App">
-      {/* <main className="main_container">
-        <BgContainer />
-        <FormContainer />
-      </main> */}
-      <BarChart />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <div className="App">
+            <main className="main__container">
+              <BgContainer />
+              <FormContainer />
+            </main>
+          </div>
+        } />
+        <Route path="/graph" element={<BarChart />} />
+      </Routes>
+    </BrowserRouter >
   );
 }
 
