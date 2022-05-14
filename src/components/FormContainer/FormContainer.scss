@@ -1,0 +1,30 @@
+.form_container {
+  width: 50vw;
+  height: 100vh;
+  padding: 2% 5.5%;
+  color: lightslategray;
+  font-weight: 500;
+  background: white;
+
+  form {
+    .create_account_btn {
+      display: block;
+      color: white;
+      background: #03b3ff;
+      border: none;
+      padding: 12px 10px;
+      width: 33%;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+  }
+}
+
+.form_heading {
+  h1 {
+    color: darkslategray;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+}
