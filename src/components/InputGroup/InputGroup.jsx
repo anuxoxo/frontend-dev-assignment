@@ -29,7 +29,7 @@ export default function InputGroup({ name, type, label }) {
     }
     const validatePhone = () => {
         if (inputText.length > 0)
-            if (!(/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test(inputText))) {
+            if (!(/^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[789]\d{9}$/.test(inputText))) {
                 setErrMsg("Please enter valid phone number")
                 setShowErr(true);
             } else {
